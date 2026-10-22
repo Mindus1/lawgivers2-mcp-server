@@ -1,0 +1,51 @@
+name: Bug report
+description: A tool fails, does the wrong thing, or the game misbehaves with the MCP Server installed.
+labels: ["bug"]
+body:
+  - type: input
+    id: game-version
+    attributes:
+      label: Game version
+      description: Shown at the bottom of the main menu.
+      placeholder: "0.17.2"
+    validations:
+      required: true
+  - type: input
+    id: mod-version
+    attributes:
+      label: MCP Server version
+      description: Shown next to the name in the Mods window, or by the game_state tool.
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: client
+    attributes:
+      label: AI tool
+      description: The MCP client you use, with its version if you know it.
+      placeholder: "Claude Code 2.1"
+  - type: textarea
+    id: call
+    attributes:
+      label: The call
+      description: The tool and the arguments it got, and what came back.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What went wrong, and what you expected instead. Say where in the game you were.
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Log
+      description: Drag `BepInEx\LogOutput.log` in here. It's overwritten every time the game starts, so grab it right after the problem.
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If it's about something on screen, a screenshot helps a lot.

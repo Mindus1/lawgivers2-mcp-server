@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- BepInEx 6 runs plugins on .NET 6. -->
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <CheckEolTargetFramework>false</CheckEolTargetFramework>
+    <!-- Another install: dotnet build -p:GameDir="C:\path\to\Lawgivers II" -->
+    <GameDir Condition="'$(GameDir)' == ''">C:\Program Files (x86)\Steam\steamapps\common\Lawgivers II</GameDir>
+    <Core>$(GameDir)\BepInEx\core</Core>
+    <Interop>$(GameDir)\BepInEx\interop</Interop>
+    <Plugins>$(GameDir)\BepInEx\plugins</Plugins>
+  </PropertyGroup>
+
+  <!-- Everything referenced is already in the game, so nothing is copied next to the build. -->
+  <ItemDefinitionGroup>
+    <Reference><Private>false</Private></Reference>
+  </ItemDefinitionGroup>
+
+  <ItemGroup>
+    <Reference Include="$(Core)\BepInEx.Core.dll" />
+    <Reference Include="$(Core)\BepInEx.Unity.IL2CPP.dll" />
+    <Reference Include="$(Core)\0Harmony.dll" />
+    <Reference Include="$(Core)\Il2CppInterop.Runtime.dll" />
+    <Reference Include="$(Interop)\Il2Cppmscorlib.dll" />
+    <Reference Include="$(Interop)\Lawgivers.dll" />
+    <Reference Include="$(Interop)\Lawgivers.UI.dll" />
+    <Reference Include="$(Interop)\Lawgivers.UI.Elements.dll" />
+    <Reference Include="$(Interop)\Somnium.dll" />
+    <Reference Include="$(Interop)\Unity.InputSystem.dll" />
+    <Reference Include="$(Interop)\UnityEngine.CoreModule.dll" />
+    <Reference Include="$(Interop)\UnityEngine.UI.dll" />
+    <Reference Include="$(Interop)\UnityEngine.UIModule.dll" />
+    <Reference Include="$(Interop)\UnityEngine.TextRenderingModule.dll" />
+    <Reference Include="$(Interop)\UnityEngine.ScreenCaptureModule.dll" />
+    <Reference Include="$(Interop)\UnityEngine.ImageConversionModule.dll" />
+    <Reference Include="$(Interop)\Unity.TextMeshPro.dll" />
+  </ItemGroup>
+
+  <!-- The installed Mod Library. Build and install it first. -->
+  <ItemGroup>
+    <Reference Include="$(Plugins)\ModLibrary.dll" />
+  </ItemGroup>
+
+  <Target Name="Deploy" AfterTargets="Build">
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(Plugins)" />
+  </Target>
+</Project>

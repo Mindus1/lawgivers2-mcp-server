@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Problem with the Mod Library?
+    url: https://github.com/Mindus1/lawgivers2-mod-library/issues/new/choose
+    about: Report it in the Mod Library repository instead.
+  - name: Problem with the Mod Manager?
+    url: https://github.com/Mindus1/lawgivers2-mod-manager/issues/new/choose
+    about: Report it in the Mod Manager repository instead.
+  - name: Problem with the Cheat Menu?
+    url: https://github.com/Mindus1/lawgivers2-cheat-menu/issues/new/choose
+    about: Report it in the Cheat Menu repository instead.

@@ -1,0 +1,16 @@
+name: Tool request
+description: Something you'd like the AI to be able to see or do in the game.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: What should the AI be able to do?
+      description: The thing you're trying to test, not just the tool you'd like.
+    validations:
+      required: true
+  - type: textarea
+    id: today
+    attributes:
+      label: What happens today?
+      description: Which tools you tried, and where they fall short.
