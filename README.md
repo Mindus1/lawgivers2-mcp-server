@@ -7,7 +7,7 @@ Lets AI tools see and drive Lawgivers II, for testing mods.
 ![Lawgivers II 0.17.2](https://img.shields.io/badge/Lawgivers_II-0.17.2-F28019?style=flat-square)
 ![BepInEx 6 IL2CPP](https://img.shields.io/badge/BepInEx-6_IL2CPP-4B5563?style=flat-square)
 ![License: MIT](https://img.shields.io/badge/license-MIT-6B7280?style=flat-square)
-[![M8ven Score](https://m8ven.ai/badge/mcp/mindus1-lawgivers2-mcp-server-slh8ee)](https://m8ven.ai/mcp/mindus1-lawgivers2-mcp-server-slh8ee?s=readme)
+[![M8ven Score](https://m8ven.ai/badge/mcp/mindus1-lawgivers2-mcp-server-slh8ee?v=bb7683e86993e623ecb2f0450f6f964a)](https://m8ven.ai/mcp/mindus1-lawgivers2-mcp-server-slh8ee?s=readme)
 
 </div>
 
