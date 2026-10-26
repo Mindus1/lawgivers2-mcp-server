@@ -339,7 +339,8 @@ namespace McpServer
 
             if (await MainThread.Run(() => UiElements.Find("UI/Info/Button").element != null))
                 await Actions["click"](new JsonObject { ["target"] = "UI/Info/Button", ["wait_seconds"] = 10 });
-            await Actions["click"](new JsonObject { ["target"] = "Buttons/Singleplayer", ["wait_seconds"] = 30 });
+            if (!await MainThread.Run(() => UiElements.Visible(withTexts: false).Any(element => element.Id.StartsWith("UI/Menu/Singleplayer/"))))
+                await Actions["click"](new JsonObject { ["target"] = "Buttons/Singleplayer", ["wait_seconds"] = 30 });
 
             var (save, problem) = await Retry<(UiElements.Element save, string problem)>(10, () =>
             {
